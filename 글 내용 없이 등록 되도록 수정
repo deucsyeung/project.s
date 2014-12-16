@@ -1,0 +1,14 @@
+
+
+/modules/board/tpl/filter/insert.xml
+
+
+8행
+
+    <node target="content" required="true" />
+
+를
+
+    <node target="content" />
+
+로 수정시 내용에 값을 입력안해도 등록됨
