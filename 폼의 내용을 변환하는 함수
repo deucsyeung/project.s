@@ -1,0 +1,7 @@
+
+
+{str_replace('name=','id="3" readonly="readonly" name=',$extra_keys[3]->getFormHTML())}
+
+/*
+<input type="text" value="" readonly="readonly" />
+*/
