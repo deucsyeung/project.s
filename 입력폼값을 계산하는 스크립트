@@ -1,0 +1,14 @@
+<script>
+	function Func()
+	{
+		var a=parseInt(document.getElementById('a').value);
+		var b='{$val->getExtraValue(5)}'-a;
+		var c=b*2;
+		document.getElementById('b').value=b;
+		document.getElementById('c').value=c;
+	}
+</script>
+
+<input type="text" id="a" value="" onkeypress="Func()" onkeyup="Func()"  />
+<input type="text" id="b" value="" readonly="readonly" />
+<input type="text" id="c" value="" readonly="readonly" />
