@@ -1,0 +1,27 @@
+{@
+$args->order_type = "asc";
+$args->list_count = 1;
+$oDocumentModel = &getModel('document');
+$output = $oDocumentModel->getDocumentList($args);
+}
+
+<!--@foreach($output->data as $key=>$val)-->
+<script> 
+function Func() 
+{ 
+   var a=parseInt(document.getElementById('a').value); 
+   var b='{$val->getExtraValue(7)}'-a; 
+
+   document.getElementById('b').value=b; 
+} 
+</script>
+<!--@end-->
+
+
+<!--@foreach($output->data as $key=>$val)-->
+{$val->getExtraValue(7)}
+<!--@end-->
+
+
+{str_replace('name=','id="a" onkeypress="Func()" onkeyup="Func()" name=',$extra_keys[6]->getFormHTML())}
+{str_replace('name=','id="b" readonly="readonly" name=',$extra_keys[7]->getFormHTML())}
