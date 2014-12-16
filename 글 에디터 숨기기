@@ -1,0 +1,10 @@
+
+
+<!--// 에디터 출력 부분 -->
+<div class="get_editor">{$oDocument->getEditor()}</div>
+
+를
+
+<div style="display:none;" class="get_editor">{$oDocument->getEditor()}</div>
+
+로 수정.
