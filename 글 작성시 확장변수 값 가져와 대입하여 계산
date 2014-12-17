@@ -1,8 +1,9 @@
 {@
+$args->module_srl = $module_info->module_srl;
 $args->order_type = "asc";
 $args->list_count = 1;
 $oDocumentModel = &getModel('document');
-$output = $oDocumentModel->getDocumentList($args);
+$output = $oDocumentModel->getDocumentList($args); 
 }
 
 <!--@foreach($output->data as $key=>$val)-->
