@@ -59,3 +59,9 @@ function SetNum(obj){
 {str_replace('name=','onkeypress="javascript:SetNum(this)" onblur="javascript:SetNum(this); Format_Comma(this)" onfocus="javascript:Delete_Comma(this)" name=',$extra_keys[3]->getFormHTML())}
 
 
+<!-- 데이타 불러올때 숫자 단위에 콤마 찍으려면??? (자바필요없음 자체함수로처리) -->
+{$val->getExtraValue(7)} 
+을 
+
+{number_format($val->getExtraValue(7))}
+이렇게 number_format 함수 이용하여 사용
