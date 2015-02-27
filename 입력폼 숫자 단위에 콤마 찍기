@@ -1,0 +1,61 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function Format_Comma(f){
+ str = f.value;
+ if(str == ""){
+  return;
+ }
+ else {
+  var newValue = str + "";
+  var len = newValue.length;
+  var ch = "";
+  var j = 1;
+  var formatValue = "";
+  len = newValue.length;
+  for (i = len; i>0; i--){
+   ch = newValue.substring(i-1, i);
+   formatValue = ch + formatValue;
+   if((j % 3) == 0 && i > 1) {
+    formatValue = "," + formatValue;
+   }
+   j++;
+  }
+ }
+ f.value = formatValue;
+} 
+function Delete_Comma(f){
+ str = f.value;
+ if(str == ""){
+  return;
+ }
+ else {
+  var result = ""
+  comma_pattern = /([\,]{1})/;
+  for(var i = 0; i < str.length; i++) {
+   if(comma_pattern.test(str.charAt(i))) {
+    result += str.charAt(i).replace(comma_pattern, "");
+   }
+   else {
+    result += str.charAt(i);
+   }
+  }
+ }
+ f.value = result;
+}
+function SetNum(obj){
+ val=obj.value;
+ re=/[^0-9]/gi;
+ obj.value=val.replace(re,"");
+}
+//-->
+</SCRIPT>
+
+
+<!-- onkeypress=부터 -->
+<input type="text" name="extra_vars5" onkeypress="javascript:SetNum(this)" onblur="javascript:SetNum(this); Format_Comma(this)" onfocus="javascript:Delete_Comma(this)">
+
+
+<!-- str_replace 함수로 치환하여 사용하기 -->
+{str_replace('name=','onkeypress="javascript:SetNum(this)" onblur="javascript:SetNum(this); Format_Comma(this)" onfocus="javascript:Delete_Comma(this)" name=',$extra_keys[3]->getFormHTML())}
+
+
